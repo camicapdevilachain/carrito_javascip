@@ -16,8 +16,8 @@ class UI {
     addproduct(product)
        {
 
-        const productlist=document.getElementById('product.list');
-        const element =   new document.createElement('div');
+        const productlist=document.getElementById('product-list');
+        const element =    document.createElement('div');
         element.innerHTML= `
                           <div class="card text-center mb-4">
 
@@ -25,7 +25,7 @@ class UI {
                            
                          <strong>Product name:</strong>: ${product.name}
                          <strong>Product price:</strong>: ${product.price}
-                         <strong>Product year:</strong>: ${product.year}
+                         <strong>product year:</strong>: ${product.year}
                          <a href="#" class="btn btn-danger" name="delete">delete</a>
                          </div>
 
@@ -56,6 +56,8 @@ class UI {
      div.appendChild(document.createTextNode(message));
      //mostrar en el dom
    const container= document.querySelector('.container');
+  const app = document.querySelector('#App');
+
 
     }
 }
@@ -66,7 +68,7 @@ let parseproducts=JSON.parse(sessionStorage.getItem(product));
 
 // DOM events
 
-document.getElementById('product-form').addEventListener('submit',function(e)
+document.getElementById('product-form').AddEventListener('submit',function(e)
                                                                 {    
                                                                     e.preventDefault();
                                                                      const name=document.getElementById('name').value;
@@ -82,7 +84,7 @@ document.getElementById('product-form').addEventListener('submit',function(e)
                                                                      
                                                                  });
 
-                                                                 document.getElementById('prodct-list').addEventListener('click',function(e)
+                                                                 document.getElementById('product-list').AddEventListener('click',function(e)
                                                                                                                                   {
                                                                                                                                      const ui=new UI ();
                                                                                                                                      ui.deleteproduct(e.target);

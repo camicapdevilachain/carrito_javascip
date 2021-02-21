@@ -16,7 +16,7 @@ class UI {
     addproduct(product)
        {
 
-        const productlist=document.getElementById('product-list');
+        const productlist=document.getElementById('product');
         const element =    document.createElement('div');
         element.innerHTML= `
                           <div class="card text-center mb-4">
@@ -68,7 +68,7 @@ let parseproducts=JSON.parse(sessionStorage.getItem(product));
 
 // DOM events
 
-document.getElementById('product-form').AddEventListener('submit',function(e)
+document.getElementById('product-form').addEventListener('submit',function(e)
                                                                 {    
                                                                     e.preventDefault();
                                                                      const name=document.getElementById('name').value;
@@ -84,7 +84,7 @@ document.getElementById('product-form').AddEventListener('submit',function(e)
                                                                      
                                                                  });
 
-                                                                 document.getElementById('product-list').AddEventListener('click',function(e)
+                                                                 document.getElementById('product').addEventListener('click',function(e)
                                                                                                                                   {
                                                                                                                                      const ui=new UI ();
                                                                                                                                      ui.deleteproduct(e.target);
